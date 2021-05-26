@@ -1,0 +1,82 @@
+$black: #0A0A0A;
+$white: #fcfcff;
+$gray: #9FA19D;
+$yellow-primary: #F2D341;
+$yellow-secondary: #F2C73F;
+
+
+html,*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width:100vw;
+    position: relative;
+    background-color:$black;
+    color: $white;
+    font-family: 'Odibee Sans', cursive;
+}
+
+.container{
+    position: relative;
+    width: 80%;
+    margin:auto;
+}
+
+h1{
+    text-align: center;
+    margin: 4rem 0;
+    span{
+        color: $yellow-secondary;
+    }
+}
+
+.cart{
+    &__board{
+        position: relative;
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &__element{
+        height: 14rem;
+        width: 14.5%;
+        border: 1px solid $yellow-primary;
+        margin: .5rem .5rem;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        img{
+            max-width: 100%;
+            height: 100%;
+        }
+        &:hover .cart__overlay::after{
+            transform:  translate(-50%, -50%) scale(1.1);
+        }
+    
+    }
+    &__overlay{
+        position: absolute;
+        width:100%;
+        height: 100%;
+        top:0;
+        left:0;
+        background-color: $yellow-secondary;
+        &::after{
+            content: url(/assets/question-mark.svg);
+            display: block;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            transition: .3s transform ease;
+            
+        }
+    }
+}
