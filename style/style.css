@@ -84,4 +84,15 @@ h1 span {
   -webkit-transition: .3s transform ease;
   transition: .3s transform ease;
 }
+
+.disabled {
+  height: 14rem;
+  width: 14.5%;
+  margin: .5rem .5rem;
+  position: relative;
+}
+
+.stop-clicking {
+  pointer-events: none;
+}
 /*# sourceMappingURL=style.css.map */
