@@ -1,3 +1,6 @@
 const game = new Game(9);
 const store = new Store();
-game.render();
+let startButton = document.querySelector('#start');
+startButton.addEventListener('click', (e) => {
+    game.render();
+});

@@ -13,7 +13,6 @@ class Cart{
         this.element.classList.add('cart__element');
         this.element.setAttribute('data-number', "");
         this.element.innerHTML = `
-            <div class="cart__overlay"></div>
             <img src="" alt="">
         `
         this.listener();

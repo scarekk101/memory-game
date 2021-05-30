@@ -10,7 +10,7 @@ class Store{
 
     checkLength(){
         if(this.store.length == 2 ){
-            game.stopClicking();
+            game.stopClick();
             this.isSimilar();
         }
         else return;
@@ -40,7 +40,7 @@ class Store{
     }
 
     hideCards(){
-        game.Clicking();
+        game.addClick();
         game.refreshTable(); 
     }
 
