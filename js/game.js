@@ -77,13 +77,22 @@ class Game{
         this.pair = pair * 2;
         this.board = document.getElementById('board');
         this.mainClass = 'cart__element'
+        this.cards = [];
     }
     render(){
         for(let i = 0; i < this.pair; i++){
             this.cart = new Cart()
             this.board.appendChild(this.cart.element);
+            this.cards.push(this.cart);
         }
         this.getElements();
+        this.disableStartButton();
+        this.addOverlay();
+    }
+
+    disableStartButton(){
+        this.button = document.getElementById('start');
+        this.button.setAttribute('disabled', 'disabled');
     }
 
     getElements(){
@@ -115,17 +124,27 @@ class Game{
         this.shuffleCart(this.data)
         this.Elements.forEach((e, i) => {
             e.dataset.number = this.data[i].elemData;
-            e.children[1].src = this.data[i].imageSrc;
+            e.children[0].src = this.data[i].imageSrc;
         })
     }
 
-
-    stopClicking(){
-        if(store.store.length == 2){
-            this.board.classList.add('stop-clicking');
-        }
+    addOverlay(){
+        setTimeout(() => {
+            this.cards.forEach((e)=>{
+                console.log(e);
+                this.overlay = document.createElement('div');
+                this.overlay.classList.add('cart__overlay');
+    
+                e.element.appendChild(this.overlay);
+            })
+        },3000);
     }
-    Clicking(){
+
+
+    stopClick(){
+            this.board.classList.add('stop-clicking');
+    }
+    addClick(){
         this.board.classList.remove('stop-clicking');
     }
 
