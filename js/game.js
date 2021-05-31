@@ -1,3 +1,5 @@
+import Cart from './cart';
+
 class Game{
     constructor(pair){
         this.data = [
@@ -149,3 +151,5 @@ class Game{
     }
 
 }
+
+export default Game;

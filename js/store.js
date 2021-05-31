@@ -1,3 +1,4 @@
+import { game } from './app';
 class Store{
     constructor(){
         this.store = [];
@@ -46,3 +47,6 @@ class Store{
 
 
 }
+
+
+export default Store;

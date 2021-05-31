@@ -1,0 +1,30 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "first working with npm",
+  "main": "./js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarekk101/memory-game.git"
+  },
+  "author": "Dawid Piszczan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scarekk101/memory-game/issues"
+  },
+  "homepage": "https://github.com/scarekk101/memory-game#readme",
+  "dependencies": {
+    "pexels": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  }
+}

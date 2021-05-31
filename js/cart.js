@@ -1,3 +1,5 @@
+import { store } from './app'
+
 class Cart{
     constructor(){
         this.isReverse = false;
@@ -34,6 +36,8 @@ class Cart{
         this.element.addEventListener('click', this.reverseCard.bind(this));
     } 
 }
+
+export default Cart;
 
 
 
