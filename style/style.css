@@ -105,6 +105,10 @@ h1 span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 2rem 0;
 }
 
@@ -126,5 +130,39 @@ h1 span {
 #start:hover {
   color: #fcfcff;
   border: 1px solid #fcfcff;
+}
+
+.api {
+  position: absolute;
+  top: 90vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.api__images-authors p {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.api__images-authors ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.api__images-authors ul li a {
+  color: #F2D341;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.api__link p {
+  text-align: center;
+}
+
+.api__link p a {
+  color: #2a9195;
 }
 /*# sourceMappingURL=style.css.map */

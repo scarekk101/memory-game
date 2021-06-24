@@ -97,6 +97,7 @@ h1{
 .gameOptions{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     margin: 2rem 0;
 }
 
@@ -115,4 +116,38 @@ h1{
         border: 1px solid $white;
     }
     
+}
+
+.api {
+    position: absolute;
+    top: 90vh;
+    left:50%;
+    transform: translateX(-50%);
+    &__images{
+        &-authors{
+            p{
+                text-align: center;
+                margin: 1rem 0;
+            }
+            ul{
+                list-style-type: none;
+                display: flex;
+                li a{
+                    
+                    color: $yellow-primary;
+                    margin-right: 2rem;
+                    text-align: center;
+                }
+                
+            }
+        }
+    }
+    &__link{
+        p {
+            a{
+                color: rgb(42,145,149);
+            }
+            text-align: center;
+        }
+    }
 }

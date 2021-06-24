@@ -1,4 +1,5 @@
 const path = require("path");
+let webpack = require("webpack");
 
 module.exports = {
     entry: "./js/app.js",
@@ -6,7 +7,7 @@ module.exports = {
         filename: "bundle.min.js",
         path: path.resolve(__dirname, "./dist")
     },
-    watch: false,
+    watch: true,
     mode: "development",
     devtool: "source-map",
     module: {
@@ -22,5 +23,12 @@ module.exports = {
                 }
             }
         ]
-    }
+
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+               process: 'process/browser',
+        }),
+    ],
+   
 }
