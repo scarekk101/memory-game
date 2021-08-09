@@ -6,13 +6,15 @@ class Images{
         this.quantity = quantity;
         this.images = [];
         this.gameOptions = document.querySelector('.gameOptions');
+        this.imagesRender = this.getImages();
     }
 
-    getImages (){
+    async getImages (){
         let query = this.category;
         client.photos.search({ query, per_page: this.quantity }).then(photos => {
             if(photos.photos.length == this.quantity){
                 photos.photos.forEach((e, index)=>{
+                    this.images.push(e);
                     this.images.push(e);
                 })
             }

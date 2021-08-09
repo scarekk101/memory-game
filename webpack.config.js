@@ -1,8 +1,8 @@
 const path = require("path");
-let webpack = require("webpack");
+const webpack = require("webpack");
 
 module.exports = {
-    entry: "./js/app.js",
+    entry: ["babel-polyfill", "./js/app.js",],
     output: {
         filename: "bundle.min.js",
         path: path.resolve(__dirname, "./dist")

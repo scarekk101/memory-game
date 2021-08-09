@@ -18,10 +18,9 @@ class Store{
     }
 
     isSimilar(){
-        if (this.store[0].dataset.number == this.store[1].dataset.number){
+        if (this.store[0].dataset.link == this.store[1].dataset.link){
             this.points++;
-            setTimeout(this.updateTable.bind(this), 1000)
-            
+            setTimeout(this.updateTable.bind(this), 1000) 
         }
         else{
             this.store = [];

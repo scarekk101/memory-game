@@ -13,7 +13,7 @@ class Cart{
     createCart(){
         this.element = document.createElement('div');
         this.element.classList.add('cart__element');
-        this.element.setAttribute('data-number', "");
+        this.element.setAttribute('data-link', "");
         this.element.innerHTML = `
             <img src="" alt="">
         `
