@@ -11,7 +11,7 @@ class Images{
 
     async getImages (){
         let query = this.category;
-        client.photos.search({ query, per_page: this.quantity }).then(photos => {
+        await client.photos.search({ query, per_page: this.quantity }).then(photos => {
             if(photos.photos.length == this.quantity){
                 photos.photos.forEach((e, index)=>{
                     this.images.push(e);

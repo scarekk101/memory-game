@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +11,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Memory game! Let's have some <span>fun!</span></h1>
+        <h1>Memory game! Let's train Your <span>brain!</span></h1>
         <div class="gameOptions">
+            <input type="text" name="category" id="category" placeholder="Podaj kategorie..." value="sport">
+            <input type="number" name="pairs" id="pairs" placeholder="Podaj liczbę par..." min="2" max="20" value="6">
             <button id="start">Zagraj !</button>
         </div>
         <div class="cart">
@@ -22,7 +24,7 @@
     </div>
 
 
-    <div class="api">
+    <!-- <div class="api">
         <div class="api__link">
             <p>Pictures provided with <a href="www.pexels.com/" target="_blank">PEXELS.COM</a></p>
         </div>
@@ -40,7 +42,7 @@
                 <li><a href="#!">Example Author</a></li>
             </ul>
         </div>
-    </div>
+    </div> -->
     
     <script src="./dist/bundle.min.js"></script>
 </body>

@@ -95,10 +95,28 @@ h1{
 }
 
 .gameOptions{
+    position: relative;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
     margin: 2rem 0;
+    input{
+        height: 100%;
+        display: block;
+        border: 1px solid #F2C73F;
+        color: #F2C73F;
+        background: transparent;
+        padding: 1rem 2rem;
+        margin-right: 2rem;
+        &#pairs{
+            padding: 1rem .5rem;
+            width: 5rem;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
 }
 
 #start{

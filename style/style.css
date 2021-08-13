@@ -99,17 +99,40 @@ h1 span {
 }
 
 .gameOptions {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   margin: 2rem 0;
+}
+
+.gameOptions input {
+  height: 100%;
+  display: block;
+  border: 1px solid #F2C73F;
+  color: #F2C73F;
+  background: transparent;
+  padding: 1rem 2rem;
+  margin-right: 2rem;
+}
+
+.gameOptions input#pairs {
+  padding: 1rem .5rem;
+  width: 5rem;
+}
+
+.gameOptions input:focus {
+  outline: none;
 }
 
 #start {
