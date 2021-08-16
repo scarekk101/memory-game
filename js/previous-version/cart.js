@@ -32,9 +32,6 @@ class Cart{
             store.checkLength();
     }
 
-    cardListener(){
-        this.element.addEventListener('click', this.reverseCard.bind(this));
-    } 
 }
 
 export default Cart;

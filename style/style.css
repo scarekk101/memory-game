@@ -128,7 +128,7 @@ h1 span {
 
 .gameOptions input#pairs {
   padding: 1rem .5rem;
-  width: 5rem;
+  width: 15%;
 }
 
 .gameOptions input:focus {

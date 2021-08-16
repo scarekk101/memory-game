@@ -1,5 +1,6 @@
+import { store } from './app'
 
-class Card{
+class Card {
     constructor(imageURL){
         this.isReverse = false;
         this.image = imageURL
@@ -13,16 +14,39 @@ class Card{
         this.card.innerHTML = `
         <img src="${this.image}">
         `
+        this.setListener();
         return this.card;
     }
 
     addOverlay(){
         this.overlay = document.createElement('div')
         this.overlay.classList.add('cart__overlay')
-        console.log(this.overlay.classList)
         this.card.appendChild(this.overlay);
     }
 
+    removeOverlay(){
+        this.card.removeChild(this.overlay)
+    }
+
+    setListener(){
+        this.card.addEventListener('click', this.addToStore.bind(this))
+    }
+    
+    stopClicking(){
+        this.card.classList.add('stop-clicking');
+    }
+
+    addToStore() {
+        this.removeOverlay();
+        this.stopClicking()
+        store.clickedCards.push(this)
+        store.isTwoCards();
+
+    }
+
+
+
+    
 
 
 }

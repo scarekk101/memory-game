@@ -1,4 +1,3 @@
-import Store from './store.js'
 import Card  from './card.js'
 import client from './apiKey.js'
 
@@ -9,7 +8,6 @@ class Table{
         this.categoryElement = categoryInputElement
         this.pairs = this.pairsElement.value * 2
         this.category = this.categoryElement.value;
-        this.store = new Store();
         this.renderCards();
 
     }
@@ -22,8 +20,6 @@ class Table{
         setTimeout(()=>{
             this.addOverlays()
         },3000)
-
-        await startGame()
     }
 
 
@@ -36,6 +32,7 @@ class Table{
         }
         return this.allCards;
     }
+
 
     async getImages(query, totalRequests) {
         await client.photos.search({ query, per_page: totalRequests }).then(photos => {
@@ -71,8 +68,8 @@ class Table{
         })
     }
 
-    //functions involve game functionality
-    
+    //functions involve game functionality    
+
 }
 
 
