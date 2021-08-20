@@ -41,10 +41,11 @@ h1{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
     &__element{
         height: 14rem;
-        width: 15.5%;
+        width: calc(20% - 1rem - 1px);
         border: 1px solid $yellow-primary;
         margin: .5rem .5rem;
         border-radius: 1rem;
@@ -168,4 +169,28 @@ h1{
             text-align: center;
         }
     }
+}
+
+.memory{
+    &__winner{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        h2{
+            color: #F2C73F;
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        h1{
+            font-size: 60px;
+            color: #F2C73F;
+        }
+    }
+}
+
+.matched{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

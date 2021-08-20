@@ -1,8 +1,14 @@
-class Store{
+class Store {
     constructor(board){
         this.clickedCards = [];
         this.points = 0
         this.board = board;
+        this.matched = [];
+        this.allCards = [];
+        this.winDOM = `<div class="memory__winner">
+        <h2>Who is the winner?</h2>
+        <h1>YOU!!!</h1>
+        </div>`
     }
 
     isTwoCards(){
@@ -22,8 +28,11 @@ class Store{
     }
     match(){
         this.clickedCards.forEach((card)=>{
-            card.card.innerHTML = ``;
+            this.matched.push(card)
+            card.card.classList.add('matched')
+            card.card.innerHTML = `Matched!`;
         })
+        this.isWin();
     }
 
     restoreOverlay(){
@@ -43,6 +52,13 @@ class Store{
         }
         this.clearArray();
         this.board.classList.remove('stop-clicking')
+    }
+
+    isWin(){
+        if(this.matched.length == this.allCards.length){
+            this.board.innerHTML = this.winDOM;
+        }
+        else return;
     }
 }
 

@@ -1,5 +1,6 @@
 import Card  from './card.js'
 import client from './apiKey.js'
+import { store } from './app'
 
 class Table{
     constructor(pairsInputElement, categoryInputElement, tableWrapper){
@@ -8,18 +9,29 @@ class Table{
         this.categoryElement = categoryInputElement
         this.pairs = this.pairsElement.value * 2
         this.category = this.categoryElement.value;
-        this.renderCards();
+        this.validate();
 
     }
 
-    async renderCards(){
-        await this.getImages(this.category, this.pairs / 2)
-        await this.shuffleCart(this.images)
-        await this.generateCards()
-        await this.render()
-        setTimeout(()=>{
-            this.addOverlays()
-        },3000)
+    validate(){
+        if(this.pairsElement.value == '' || this.categoryElement.value == ''){
+            alert('Wpisz kategorię i liczbę par')
+            return false;
+        }   
+        else{
+            this.renderCards();
+        }
+    }
+
+    async renderCards(){ 
+            await this.getImages(this.category, this.pairs / 2)
+            await this.shuffleCart(this.images)
+            await this.generateCards()
+            await this.render()
+            setTimeout(()=>{
+                this.addOverlays()
+            },3000)
+        
     }
 
 
@@ -29,6 +41,7 @@ class Table{
         for(let i = 0; i<this.pairs; i++){
             this.card = new Card(this.images[i]);
                 this.allCards.push(this.card);
+                store.allCards.push(this.card)
         }
         return this.allCards;
     }
@@ -48,6 +61,7 @@ class Table{
 
 
     async render() {
+        this.board.innerHTML = ``
             this.allCards.forEach((element) => {
                     this.board.appendChild(element.card)
             })
@@ -68,7 +82,7 @@ class Table{
         })
     }
 
-    //functions involve game functionality    
+   
 
 }
 
