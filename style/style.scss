@@ -41,10 +41,11 @@ h1{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
     &__element{
         height: 14rem;
-        width: 15.5%;
+        width: calc(20% - 1rem - 1px);
         border: 1px solid $yellow-primary;
         margin: .5rem .5rem;
         border-radius: 1rem;
@@ -95,9 +96,28 @@ h1{
 }
 
 .gameOptions{
+    position: relative;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     margin: 2rem 0;
+    input{
+        height: 100%;
+        display: block;
+        border: 1px solid #F2C73F;
+        color: #F2C73F;
+        background: transparent;
+        padding: 1rem 2rem;
+        margin-right: 2rem;
+        &#pairs{
+            padding: 1rem .5rem;
+            width: 15%;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
 }
 
 #start{
@@ -115,4 +135,62 @@ h1{
         border: 1px solid $white;
     }
     
+}
+
+.api {
+    position: absolute;
+    top: 90vh;
+    left:50%;
+    transform: translateX(-50%);
+    &__images{
+        &-authors{
+            p{
+                text-align: center;
+                margin: 1rem 0;
+            }
+            ul{
+                list-style-type: none;
+                display: flex;
+                li a{
+                    
+                    color: $yellow-primary;
+                    margin-right: 2rem;
+                    text-align: center;
+                }
+                
+            }
+        }
+    }
+    &__link{
+        p {
+            a{
+                color: rgb(42,145,149);
+            }
+            text-align: center;
+        }
+    }
+}
+
+.memory{
+    &__winner{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        h2{
+            color: #F2C73F;
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        h1{
+            font-size: 60px;
+            color: #F2C73F;
+        }
+    }
+}
+
+.matched{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

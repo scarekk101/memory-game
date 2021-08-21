@@ -1,3 +1,5 @@
+import { store } from './app'
+
 class Cart{
     constructor(){
         this.isReverse = false;
@@ -11,7 +13,7 @@ class Cart{
     createCart(){
         this.element = document.createElement('div');
         this.element.classList.add('cart__element');
-        this.element.setAttribute('data-number', "");
+        this.element.setAttribute('data-link', "");
         this.element.innerHTML = `
             <img src="" alt="">
         `
@@ -30,10 +32,9 @@ class Cart{
             store.checkLength();
     }
 
-    cardListener(){
-        this.element.addEventListener('click', this.reverseCard.bind(this));
-    } 
 }
+
+export default Cart;
 
 
 

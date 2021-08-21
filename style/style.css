@@ -41,11 +41,14 @@ h1 span {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cart__element {
   height: 14rem;
-  width: 15.5%;
+  width: calc(20% - 1rem - 1px);
   border: 1px solid #F2D341;
   margin: .5rem .5rem;
   border-radius: 1rem;
@@ -99,13 +102,40 @@ h1 span {
 }
 
 .gameOptions {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: 2rem 0;
+}
+
+.gameOptions input {
+  height: 100%;
+  display: block;
+  border: 1px solid #F2C73F;
+  color: #F2C73F;
+  background: transparent;
+  padding: 1rem 2rem;
+  margin-right: 2rem;
+}
+
+.gameOptions input#pairs {
+  padding: 1rem .5rem;
+  width: 15%;
+}
+
+.gameOptions input:focus {
+  outline: none;
 }
 
 #start {
@@ -126,5 +156,74 @@ h1 span {
 #start:hover {
   color: #fcfcff;
   border: 1px solid #fcfcff;
+}
+
+.api {
+  position: absolute;
+  top: 90vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.api__images-authors p {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.api__images-authors ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.api__images-authors ul li a {
+  color: #F2D341;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.api__link p {
+  text-align: center;
+}
+
+.api__link p a {
+  color: #2a9195;
+}
+
+.memory__winner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.memory__winner h2 {
+  color: #F2C73F;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.memory__winner h1 {
+  font-size: 60px;
+  color: #F2C73F;
+}
+
+.matched {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
